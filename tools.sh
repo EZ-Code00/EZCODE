@@ -55,5 +55,16 @@ rm -rf /root/vnstat-2.6
 
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 yellow "Dependencies successfully installed..."
+mkdir -p /etc/xray
+mkdir -p /etc/bot
+mkdir -p /etc/vmess
+mkdir -p /etc/limit
+mkdir -p /etc/kyt/limit/ssh
+mkdir -p /etc/kyt/limit/vmess
+mkdir -p /etc/kyt/limit/vless
+mkdir -p /etc/kyt/limit/trojan
+mkdir -p /etc/vless
+mkdir -p /etc/trojan
+mkdir -p /root/udp
 sleep 1
 clear
