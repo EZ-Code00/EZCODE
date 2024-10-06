@@ -2,7 +2,7 @@
 
 cd
 rm -rf /etc/udp
-mkdir -p /etc/udp
+mkdir -p /root/udp
 
 # change to time GMT+7
 echo "change to time GMT+7"
