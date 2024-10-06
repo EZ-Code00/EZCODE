@@ -42,7 +42,7 @@ fi
 secs_to_human() {
 echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minute's $(( ${1} % 60 )) seconds"
 }
-mkdir -p /etx/xray
+mkdir -p /etc/xray
 mkdir -p /var/lib/ >/dev/null 2>&1
 echo "IP=" >> /var/lib/ipvps.conf
 clear
@@ -214,6 +214,7 @@ else
 echo -e "KODE SALAH SILAHKAN MASUKKAN ULANG KODENYA"
 sleep 1
 key2
+fi
 fi
 fi
 }
@@ -472,11 +473,9 @@ clear
 #read -rp "Masukan Domain SlowDNS kamu Disini : " -e dns2
 #done
 #echo $dns2 >/etc/xray/dns
-#fi
+fi
 }
-\E[40;1;41m
-TEXT : \033[0;31m
-EOF
+mkdir -p /etc/nbwr/theme
 cat <<EOF>> /etc/nbwr/theme/green
 BG : \E[40;1;42m
 TEXT : \033[0;32m
@@ -723,6 +722,7 @@ fi
 history -c
 serverV=$( curl -sS https://raw.githubusercontent.com/diah082/VIP/main/versi  )
 echo $serverV > /opt/.ver
+echo "00" > /home/daily_reboot
 aureb=$(cat /home/daily_reboot)
 b=11
 if [ $aureb -gt $b ]
@@ -744,6 +744,7 @@ rm /root/set-br.sh >/dev/null 2>&1
 rm /root/ohp.sh >/dev/null 2>&1
 rm /root/update.sh >/dev/null 2>&1
 rm /root/installsl.sh >/dev/null 2>&1
+rm /root/udp-custom.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 sleep 3
 echo  ""
