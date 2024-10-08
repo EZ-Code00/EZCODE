@@ -1,7 +1,6 @@
 #!/bin/bash
 
 cd
-rm -rf /etc/udp
 mkdir -p /root/udp
 
 # change to time GMT+7
