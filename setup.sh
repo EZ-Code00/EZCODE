@@ -750,7 +750,6 @@ sleep 3
 echo  ""
 cd
 iinfo
-rm -rf *
 echo -e "${tyblue}┌────────────────────────────────────────────┐${NC}"
 echo -e "${tyblue}│  Install SCRIPT SELESAI..                  │${NC}"
 echo -e "${tyblue}└────────────────────────────────────────────┘${NC}"
