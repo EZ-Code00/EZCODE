@@ -73,11 +73,12 @@ touch /var/log/xray/access2.log
 touch /var/log/xray/error2.log
 # / / Ambil Xray Core Version Terbaru
 latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version
-sudo wget -O /usr/local/share/xray/geoip.dat https://raw.githubusercontent.com/diah082/vip/main/install/geoip.dat
-sudo wget -O /usr/local/share/xray/geosite.dat https://raw.githubusercontent.com/diah082/vip/main/install/geosite.dat
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 24.9
+19
+sudo wget -O /usr/local/share/xray/geoip.dat https://github.com/v2fly/geoip/releases/latest/download/geoip.dat
+sudo wget -O /usr/local/share/xray/geosite.dat https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat
 
-## crt xray
+## MENGAMBIL SERTIFIKAT
 systemctl stop nginx 
 systemctl stop haproxy
 mkdir /root/.acme.sh
