@@ -23,7 +23,11 @@ else
 domain="newbie.dev"
 fi
 sleep 0.5
+if [[ -d /etc/xray]]; then
+echo -ne
+else
 mkdir -p /etc/xray
+fi
 echo -e "[ ${green}INFO${NC} ] Checking... "
 apt install iptables iptables-persistent -y
 sleep 0.5
@@ -61,7 +65,6 @@ chown www-data.www-data $domainSock_dir
 geofdr="/usr/local/share/xray";! [ -d $geofdr ] && mkdir -p $geofdr
 # Make Folder Xray
 mkdir -p /var/log/xray
-mkdir -p /etc/xray
 chown www-data.www-data /var/log/xray
 chmod +x /var/log/xray
 touch /var/log/xray/access.log
@@ -71,11 +74,11 @@ touch /var/log/xray/error2.log
 # / / Ambil Xray Core Version Terbaru
 latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version
-sudo wget -O /usr/local/share/xray/geoip.dat https://github.com/v2fly/geoip/releases/latest/download/geoip.dat
-sudo wget -O /usr/local/share/xray/geosite.dat https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat
+sudo wget -O /usr/local/share/xray/geoip.dat https://raw.githubusercontent.com/diah082/vip/main/install/geoip.dat
+sudo wget -O /usr/local/share/xray/geosite.dat https://raw.githubusercontent.com/diah082/vip/main/install/geosite.dat
 
 ## crt xray
-systemctl stop nginx
+systemctl stop nginx 
 systemctl stop haproxy
 mkdir /root/.acme.sh
 curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
