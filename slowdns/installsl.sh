@@ -1,13 +1,13 @@
 #!/bin/sh
-REPOS="https://raw.githubusercontent.com/diah082/vip/main/"
+REPOS="https://raw.githubusercontent.com/Diah082/vip/main/"
 ns_domain_cloudflare() {
 	DOMAIN=$(cat /etc/xray/domain | cut -d "." -f2-4)
 	DOMAIN_PATH=$(cat /etc/xray/domain)
 	SUB=$(cat /etc/xray/domain | cut -d "." -f1)
-	SUB_DOMAIN=${SUB}."vpnnewbie.my.id"
+	SUB_DOMAIN=${SUB}."${DOMAIN}"
 	NS_DOMAIN=ns-${SUB_DOMAIN}
-	CF_ID=awanwengi64@gmail.com
-        CF_KEY=78b8a042332fefd8bc3a65a57de69477e992b
+	CF_ID=diahfitriliani9@gmail.com
+        CF_KEY=aab71fabc1841251c851a1d1cf91dd2dcc3c8
 	set -euo pipefail
 	IP=$(wget -qO- ipinfo.io/ip)
 	echo "Updating DNS NS for ${NS_DOMAIN}..."

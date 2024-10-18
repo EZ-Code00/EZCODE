@@ -11,7 +11,7 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
 # Getting
-
+REPO="https://raw.githubusercontent.com/diah082/vip/main/"
 echo -e "
 "
 date
@@ -30,10 +30,6 @@ echo -e "[ ${green}INFO$NC ] Setting ntpdate"
 ntpdate pool.ntp.org
 timedatectl set-ntp true
 sleep 0.5
-echo -e "[ ${green}INFO$NC ] Enable chronyd"
-systemctl enable chronyd
-systemctl restart chronyd
-sleep 0.5
 echo -e "[ ${green}INFO$NC ] Enable chrony"
 systemctl enable chrony
 systemctl restart chrony
@@ -49,8 +45,7 @@ apt install socat cron bash-completion ntpdate -y
 ntpdate pool.ntp.org
 apt -y install chrony
 apt install zip -y
-apt install curl pwgen openssl netcat cron -y
-
+apt install curl pwgen openssl cron -y
 
 # install xray
 sleep 0.5
@@ -388,12 +383,11 @@ WantedBy=multi-user.target
 EOF
 
 #nginx config
-wget -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/diah082/vip/main/install/xray.conf"
-wget -O /etc/haproxy/haproxy.cfg "https://raw.githubusercontent.com/diah082/vip/main/install/haproxy.cfg"
+wget -O /etc/nginx/conf.d/xray.conf "${REPO}install/xray.conf"
+wget -O /etc/haproxy/haproxy.cfg "${REPO}install/haproxy.cfg"
 sed -i 's/xxx/$domain/' /etc/nginx/conf.d/xray.conf
 sed -i 's/xxx/$domain/' /etc/haproxy/haproxy.cfg
 cat /etc/xray/xray.key /etc/xray/xray.crt | tee /etc/haproxy/hap.pem
-wget -q https://raw.githubusercontent.com/diah082/vip/main/install/ipserver && chmod ipserver && ./ipserver
 echo -e "$yell[SERVICE]$NC Restart All service"
 systemctl daemon-reload
 sleep 0.5
@@ -402,10 +396,10 @@ systemctl daemon-reload
 systemctl enable xray
 systemctl restart xray
 systemctl restart nginx
+systemctl enable haproxy
 systemctl restart haproxy
 systemctl enable runn
 systemctl restart runn
-rm ipserver
 
 sleep 0.5
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
@@ -417,4 +411,4 @@ if [ -f /root/scdomain ];then
 rm /root/scdomain > /dev/null 2>&1
 fi
 clear
-rm -f ins-xray.sh
+rm -r ins-xray.sh

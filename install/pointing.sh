@@ -1,12 +1,28 @@
 #!/bin/bash
 apt install jq curl -y
-curl -s https://pastebin.com/raw/Gw35j9qh > /etc/tokencf/token
-DO=$(cat /etc/xray/domain | cut -d "." -f2-4)
+if [[ ! -e /etc/github/cf ]]; then
+mkdir -p /etc/github
+curl -s https://pastebin.com/raw/Gw35j9qh > /etc/github/cf
+fi
+DO=$(cat /etc/xray/domain | cut -d "." -f2-)
 SUB=$(cat /etc/xray/domain | cut -d "." -f1)
+
+# Memeriksa apakah DO kosong, jika kosong maka isi dengan 'palon.store'
+if [[ -z "$DO" ]]; then
+    DO="palon.store"
+fi
+
+# Memeriksa apakah SUB kosong, jika kosong maka isi dengan 4 karakter acak alfanumerik
+if [[ -z "$SUB" ]]; then
+    SUB=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 4)
+fi
+
 IP=$(curl -sS ipv4.icanhazip.com)
 SUB_DOMAIN=${SUB}.${DO}
 NS_DOMAIN=*.${SUB_DOMAIN}
-CF_KEY=$(cat /etc/tokencf/token)
+echo "$SUB_DOMAIN" > /etc/xray/domain
+echo "$SUB_DOMAIN" > /root/domain
+CF_KEY=$(cat /etc/github/cf)
 set -euo pipefail
 echo "Pointing Domain for $SUB_DOMAIN..."
 ZONE=$(
@@ -59,5 +75,5 @@ ZONE=$(
 		--data '{"type":"A","name":"'${NS_DOMAIN}'","content":"'${IP}'","proxied":true}'
 	)	
 	fi
-sleep 10
+sleep 1
 clear

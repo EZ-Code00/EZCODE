@@ -4,7 +4,7 @@
 # By NEWBIE VPN 
 # ==================================================
 # Link Hosting Kalian
-REPO="raw.githubusercontent.com/Diah082/vip/main/install/"
+REPO="https://raw.githubusercontent.com/diah082/vip/main/"
 
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
@@ -18,7 +18,7 @@ apt install openvpn easy-rsa unzip -y
 apt install openssl iptables iptables-persistent -y
 mkdir -p /etc/openvpn/server/easy-rsa/
 cd /etc/openvpn/
-wget https://raw.githubusercontent.com/diah082/vip/main/install/vpn.zip
+wget ${REPO}install/vpn.zip
 unzip vpn.zip
 rm -f vpn.zip
 chown -R root:root /etc/openvpn/server/easy-rsa/

@@ -9,7 +9,7 @@ WH='\033[1;37m'
 ipsaya=$(wget -qO- ifconfig.me)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/diah082/izinv1/main/ip"
+data_ip="https://raw.githubusercontent.com/diah082/izin/main/ip"
 checking_sc() {
 useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
 if [[ $date_list < $useexp ]]; then
@@ -24,14 +24,11 @@ echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
 echo -e "     \033[0;33mBuy access permissions for scripts${NC}"
 echo -e "             \033[0;33mContact Your Admin ${NC}"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-systemctl stop nginx
-systemctl stop kyt
-systemctl stop xray
-systemctl stop ws
-systemctl stop haproxy
+systemctl disable nginx kyt xray ws haproxy
+systemctl stop nginx kyt xray ws haproxy
 status=$(curl -s https://pastebin.com/raw/RTUFB2cF)
 if [[ ${status} == 'off' ]]; then
-power off
+reboot
 else
 echo -ne
 exit
@@ -41,7 +38,7 @@ fi
 checking_sc
 cd
 today=$(date -d "0 days" +"%Y-%m-%d")
-Exp2=$(curl -sS https://raw.githubusercontent.com/diah082/izinv1/main/ip | grep $ipsaya | awk '{print $3}')
+Exp2=$(curl -sS https://raw.githubusercontent.com/diah082/izin/main/ip | grep $ipsaya | awk '{print $3}')
 d1=$(date -d "$Exp2" +%s)
 d2=$(date -d "$today" +%s)
 certificate=$(( (d1 - d2) / 86400 ))
@@ -108,7 +105,7 @@ systemctl start xray
 systemctl restart nginx
 systemctl start nginx
 fi
-bash2=$( pgrep bash | wc -l )
+bash2=$( pgrep menu | wc -l )
 if [[ $bash2 -gt "20" ]]; then
-killall bash
+pkill menu
 fi
