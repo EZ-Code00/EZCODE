@@ -32,6 +32,12 @@
 - UBUNTU 20.04 22 24.04 24.10
 - DEBIAN 10 11 12
 
+## TAMPILAN WELCOME
+![TAMPILAN WELCOME](https://raw.githubusercontent.com/diah082/vip/main/welcome.png)  
+## TAMPILAN MENU
+![TAMPILAN MENU](https://raw.githubusercontent.com/diah082/vip/main/menu.png)
+
+
 ### FITUR TAMBAHAN
 - Lakukan Uji Coba dengan memilih Trial Pada Licensi Key
 - Tambah Swap 2 GiB
