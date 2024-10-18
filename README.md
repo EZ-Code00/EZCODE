@@ -1,30 +1,54 @@
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Capriola&size=40&duration=4000&pause=450&color=F70069&background=FFFFAA00&center=true&random=false&width=600&height=100&lines=NEWBIE VPN AUTOSCRIPT !;Explore the world of features!" /></p>
   
-### CHANGE AUTO ROOT FOR DEBIAN & UBUNTU 22.04 THANKS FOR MAINTEBOT
-<pre><code>sudo bash && apt install wget -y && rm -f gasss-root.sh && apt install wget whois -y && wget https://raw.githubusercontent.com/maintebot/change-root/main/gasss-root.sh && chmod +x gasss-root.sh && ./gasss-root.sh && rm gasss-root.sh</code></pre>
+### CLEAR INSTALLER SCRIPT IN YOUR VPS THANKS FOR BIN456789
+### rebuild deb 10 selain do
+
+<pre><code>curl -O https://raw.githubusercontent.com/bin456789/reinstall/main/reinstall.sh && bash reinstall.sh Debian 10 && reboot</code></pre>
+### rebuil deb 11
+
+<pre><code>curl -O https://raw.githubusercontent.com/bin456789/reinstall/main/reinstall.sh && bash reinstall.sh Debian 11 && reboot</code></pre>
+### rebuild deb 12
+
+<pre><code>curl -O https://raw.githubusercontent.com/bin456789/reinstall/main/reinstall.sh && bash reinstall.sh Debian 12 && reboot</code></pre>
+### rebuild ubuntu 20.04
+
+<pre><code>curl -O https://raw.githubusercontent.com/bin456789/reinstall/main/reinstall.sh && bash reinstall.sh Ubuntu 20.04 && reboot</code></pre>
+### rebuild ubuntu 22
+
+<pre><code>curl -O https://raw.githubusercontent.com/bin456789/reinstall/main/reinstall.sh && bash reinstall.sh Ubuntu 22 && reboot</code></pre>
+### rebuild ubuntu 24
+
+<pre><code>curl -O https://raw.githubusercontent.com/bin456789/reinstall/main/reinstall.sh && bash reinstall.sh Ubuntu 24.04 && reboot</code></pre>
 
 ### INSTALL SCRIPT 
-<pre><code>wget -q https://raw.githubusercontent.com/Diah082/Newbie/main/setup.sh && chmod +x setup.sh && screen -S install ./setup.sh
+<pre><code>wget -q https://raw.githubusercontent.com/Diah082/vip/main/setup.sh && chmod +x setup.sh && ./setup.sh
 </code></pre>
 
 ### PERINTAH UPDATE 
-<pre><code>wget -q https://raw.githubusercontent.com/diah082/Newbie/main/update.sh && chmod +x update.sh && ./update.sh</code></pre>
+<pre><code>wget -q https://raw.githubusercontent.com/diah082/vip/main/menu/update.sh && chmod +x update.sh && ./update.sh</code></pre>
 
 ### TESTED ON OS 
-- UBUNTU 20.04.05
-- DEBIAN 10
+- UBUNTU 20.04 22 24.04 24.10
+- DEBIAN 10 11 12
 
 ### FITUR TAMBAHAN
-- Tambah Swap 1GiB
+- Lakukan Uji Coba dengan memilih Trial Pada Licensi Key
+- Tambah Swap 2 GiB
 - Pemasangan yang dinamis
-- Tuning profile pada server
+- Register IP Dari VPS
+- Pointing Domain 
 - Xray Core
 - Penambahan fail2ban
 - Auto block sebagian ads indo by default
-- Auto clear log per 3 menit
+- Auto clear log per 10 menit
 - Auto deler expired
 - User Details Akun
+- Lock Xray
+- Lock SSH
+- Limit IP SSH on
+- Limit IP Xray On
+- Limit Qouta Xray On
 
 ### PORT INFO
 ```
@@ -39,8 +63,7 @@
 - VMESS GRPC 443
 - VMESS NONTLS 80
 - SSH WS / TLS 443
-- SSH NON TLS 8880
-- OVPN SSL/TCP 1194
+- SSH NON TLS 80 8880 8080 2080 2082 
 - SLOWDNS 5300
 ```
 
@@ -57,6 +80,3 @@
 
 ### CONTACT NEWBIE <br>
 <a href="https://t.me/newbie_store24" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a><br><a href="https://wa.me/6282326322300" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Whatsapp&label=Whatsapp&message=Click%20Here&color=green"></a><br>
-
-### CONTACT SPS <br>
-<a href="https://t.me/Sabdopalonstore" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a><br><a href="https://wa.me/6282313716106" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Whatsapp&label=Whatsapp&message=Click%20Here&color=green"></a><br>
