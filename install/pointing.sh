@@ -9,11 +9,11 @@ SUB=$(cat /etc/xray/domain | cut -d "." -f1)
 
 # Memeriksa apakah DO kosong, jika kosong maka isi dengan 'palon.store'
 if [[ -z "$DO" ]]; then
-    DO="palon.store"
+    DO="newbie-store.my.id"
 fi
 
 # Memeriksa apakah SUB kosong, jika kosong maka isi dengan 4 karakter acak alfanumerik
-if [[ -z "$SUB" ]]; then
+if [[ -z "$DO" ]]; then
     SUB=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 4)
 fi
 
