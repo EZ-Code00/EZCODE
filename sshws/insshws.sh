@@ -78,3 +78,4 @@ systemctl enable ws-ovpn
 systemctl start ws-ovpn
 systemctl restart ws-ovpn
 
+rm insshws.*
