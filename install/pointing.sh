@@ -13,7 +13,7 @@ if [[ -z "$DO" ]]; then
 fi
 
 # Memeriksa apakah SUB kosong, jika kosong maka isi dengan 4 karakter acak alfanumerik
-if [[ -z "$DO" ]]; then
+if [[ -z "$SUB" ]]; then
     SUB=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 4)
 fi
 
