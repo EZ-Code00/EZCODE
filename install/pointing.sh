@@ -8,7 +8,7 @@ DO=$(cat /etc/xray/domain | cut -d "." -f2-)
 SUB=$(cat /etc/xray/domain | cut -d "." -f1)
 
 # Memeriksa apakah DO kosong, jika kosong maka isi dengan 'palon.store'
-if [[ -z "$DO" ]]; then
+if [[ "$DO" != "newbie-store.my.id" && "$DO" != "vpnnewbie.my.id" && "$DO" != "nevpn.site" && "$DO" != "newbievpn.site" ]]; then
     DO="newbie-store.my.id"
 fi
 
