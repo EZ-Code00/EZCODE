@@ -38,12 +38,13 @@ else
 fi
 
 # Cek dan install requests pada Python 3
-if python3 -c "import requests" &> /dev/null; then
-    echo "Library 'requests' sudah terinstal untuk Python 3."
-else
+if ! dpkg -l | grep -q python3-requests; then
     echo "Library 'requests' belum terinstal, menginstal sekarang..."
-    sudo pip3 install requests
+    sudo apt install python3-requests -y
+else
+    echo "Library 'requests' sudah terinstal untuk Python 3."
 fi
+
 
 wget -O /usr/local/bin/ws "https://raw.githubusercontent.com/diah082/vip/main/sshws/ws"
 chmod +x /usr/local/bin/ws
