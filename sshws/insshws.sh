@@ -14,7 +14,7 @@ else
     echo "$cipher_line" >> $sshd_config
     echo "Baris cipher telah ditambahkan ke $sshd_config."
 fi
-
+systemctl reload ssh sshd
 systemctl stop ws ws-ovpn
 file_path="/etc/handeling"
 
