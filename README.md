@@ -1,8 +1,7 @@
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Capriola&size=40&duration=4000&pause=450&color=F70069&background=FFFFAA00&center=true&random=false&width=600&height=100&lines=NEWBIE VPN AUTOSCRIPT !;Explore the world of features!" /></p>
 
-## PREVIEW
-![IMAGE](https://raw.githubusercontent.com/diah082/vip/main/IMG_20241019_225341_019.webp)
+![IMAGE](https://raw.githubusercontent.com/diah082/vip/main/Promo.jpg)
 
 ### CLEAR INSTALLER SCRIPT IN YOUR VPS THANKS FOR BIN456789
 ### rebuild deb 10 selain do
@@ -35,10 +34,8 @@
 - UBUNTU 20.04 22 24.04 24.10
 - DEBIAN 10 11 12
 
-## TAMPILAN WELCOME
-![TAMPILAN WELCOME](https://raw.githubusercontent.com/diah082/vip/main/welcome.png)  
-## TAMPILAN MENU
-![TAMPILAN MENU](https://raw.githubusercontent.com/diah082/vip/main/menu.png)
+## PREVIEW
+![IMAGE](https://raw.githubusercontent.com/diah082/vip/main/IMG_20241019_225341_019.webp)
 
 
 ### FITUR TAMBAHAN
