@@ -20,11 +20,18 @@ date=$(date +"%Y-%m-%d")
 output_file="/root/backup/config.json"
 clear
 
-echo -e "${GREEN}Proses dimulai, harap tunggu...${NC}"
-# Instalasi dan konfigurasi Rclone
-apt install -y rclone > /dev/null 2>&1
-printf "q\n" | rclone config
+# Mengecek apakah rclone sudah terinstal
+if ! command -v rclone &> /dev/null; then
+    echo -e "${ORANGE}rclone belum terinstal, menginstal rclone...${NC}"
+    apt install -y rclone > /dev/null 2>&1
+    printf "q\n" | rclone config
+else
+    echo -e "${GREEN}rclone sudah terinstal, melewati instalasi.${NC}"
+fi
+clear
+# Pengambilan data rclone
 wget -qO /root/.config/rclone/rclone.conf "${REPO}install/rclone.conf"
+echo -e "${GREEN}Proses dimulai, harap tunggu...${NC}"
 
 # Membuat direktori backup
 rm -rf /root/backup
@@ -73,7 +80,8 @@ for input_file in "${input_files[@]}"; do
 done
 
 # Membuat arsip backup
-zip -r /root/$IP-$date.zip /root/backup > /dev/null 2>&1
+cd /root
+zip -r $IP-$date.zip backup > /dev/null 2>&1
 
 # Mengunggah ke Google Drive
 rclone copy /root/$IP-$date.zip dr:backup/ > /dev/null 2>&1
