@@ -24,7 +24,7 @@ ns_domain_cloudflare() {
 		-H "Content-Type: application/json" | jq -r .result[0].id
 	)
 
-	if [[ "${#RECORD}" -le 10 ]]; then
+	if [ "${#RECORD}" -le 10 ]; then
 		RECORD=$(
 			curl -sLX POST "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records" \
 			-H "X-Auth-Email: ${CF_ID}" \
