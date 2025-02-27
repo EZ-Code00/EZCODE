@@ -24,7 +24,7 @@
 <pre><code>curl -O https://raw.githubusercontent.com/bin456789/reinstall/main/reinstall.sh && bash reinstall.sh Ubuntu 24.04 && reboot</code></pre>
 
 ### INSTALL SCRIPT 
-<pre><code>apt update-y && apt install -y wget curl jq && wget -q https://raw.githubusercontent.com/Diah082/vip/main/setup.sh && chmod +x setup.sh && ./setup.sh
+<pre><code>apt update -y && apt install -y wget curl jq && wget -q https://raw.githubusercontent.com/Diah082/vip/main/setup.sh && chmod +x setup.sh && ./setup.sh
 </code></pre>
 
 ### PERINTAH UPDATE 
