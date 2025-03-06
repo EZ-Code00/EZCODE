@@ -27,6 +27,10 @@
 <pre><code>apt update -y && apt install -y wget curl jq && wget -q https://raw.githubusercontent.com/Diah082/vip/main/setup.sh && chmod +x setup.sh && ./setup.sh
 </code></pre>
 
+### INSTALL SCRIPT SIMPEL 
+<pre><code>apt update -y && apt install -y wget curl jq && wget -q https://raw.githubusercontent.com/Diah082/vip/main/Install.sh && chmod +x Install.sh && ./Install.sh
+</code></pre>
+
 ### PERINTAH UPDATE 
 <pre><code>wget -q https://raw.githubusercontent.com/diah082/vip/main/menu/update.sh && chmod +x update.sh && ./update.sh</code></pre>
 
