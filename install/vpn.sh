@@ -122,10 +122,10 @@ cat >/var/www/html/index.html <<EOF
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newbie Store Vpn</title>
+    <title>Informasi</title>
     <meta name="description" content="Info Script Dan Profile" />
     <meta name="theme-color" content="#000000" />
-		<meta property="og:image" content="https://raw.githubusercontent.com/diah082/vip/main/Assets/autosc.jpg" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/diah082/vip/main/Assets/autosc.jpg" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/css/mdb.min.css" rel="stylesheet">
@@ -170,6 +170,7 @@ cat >/var/www/html/index.html <<EOF
         <h1>Informasi Script & Profil</h1>
         <p><strong>Script:</strong> Sistem otomatisasi berbasis Go dan Bash untuk proxy tunneling dan manajemen server.</p>
         <p><strong>Profil:</strong> Developer dengan fokus pada optimalisasi script, keamanan, dan integrasi multi-platform.</p>
+        <p><strong>Catatan:</strong> Jika Membutuhkan info Detail Akun silakhan Hubungi Admin dengan mengirimkan Struk Pembelian Terimaksih.</p>
         <div class="contact">
             <h2>Kontak Saya</h2>
             <p>
