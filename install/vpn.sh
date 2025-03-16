@@ -125,7 +125,7 @@ cat >/var/www/html/index.html <<EOF
     <title>Newbie Store Vpn</title>
     <meta name="description" content="Info Script Dan Profile" />
     <meta name="theme-color" content="#000000" />
-		<meta property="og:image" content="https://raw.githubusercontent.com/diah082/vip/main/IMG_20241019_225341_019.webp" />
+		<meta property="og:image" content="https://raw.githubusercontent.com/diah082/vip/main/autosc.jpg" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/css/mdb.min.css" rel="stylesheet">
