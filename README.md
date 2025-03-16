@@ -28,7 +28,7 @@
 </code></pre>
 
 ### INSTALL SCRIPT SIMPEL 
-<pre><code>apt update -y && apt install -y wget curl jq && wget -q https://raw.githubusercontent.com/Diah082/vip/main/Install.sh && chmod +x Install.sh && ./Install.sh
+<pre><code>apt update -y && apt install -y wget curl jq && wget -q https://raw.githubusercontent.com/Diah082/vip/main/Install.sh && chmod +x Install.sh && screen -S install ./Install.sh
 </code></pre>
 
 ### PERINTAH UPDATE 
