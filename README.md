@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Capriola&size=40&duration=4000&pause=450&color=F70069&background=FFFFAA00&center=true&random=false&width=600&height=100&lines=NEWBIE+VPN+AUTOSCRIPT+!;Explore+the+world+of+features!" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Capriola&size=40&duration=4000&pause=450&color=F70069&background=FFFFAA00&center=true&random=false&width=600&height=100&lines=EZ+CODE+AUTOSCRIPT+!;Explore+the+world+of+features!" alt="Typing SVG" />
   </a>
 </p>
 
@@ -28,22 +28,15 @@
 <pre><code>curl -O https://raw.githubusercontent.com/bin456789/reinstall/main/reinstall.sh && bash reinstall.sh Ubuntu 24.04 && reboot</code></pre>
 
 ### INSTALL SCRIPT
-<pre><code>apt update -y && apt install -y wget curl jq && wget -q https://raw.githubusercontent.com/Diah082/vip/main/Install.sh && chmod +x Install.sh && screen -S install ./Install.sh 
+<pre><code>apt update -y && apt install -y wget curl jq && wget -q https://raw.githubusercontent.com/EZ-Code00/EZCODE/main/Install.sh && chmod +x Install.sh && screen -S install ./Install.sh 
 </code></pre>
 
 ### PERINTAH UPDATE 
-<pre><code>wget -q https://raw.githubusercontent.com/diah082/vip/main/menu/update.sh && chmod +x update.sh && ./update.sh</code></pre>
-
-### PERINTAH BACKUP KHUSUS
-<pre><code>wget -qO /usr/sbin/backupot "https://raw.githubusercontent.com/diah082/vip/main/menu/backupot" && chmod +x /usr/sbin/backupot && backupot</code></pre>
+<pre><code>wget -q https://raw.githubusercontent.com/EZ-Code00/EZCODE/main/menu/update.sh && chmod +x update.sh && ./update.sh</code></pre>
 
 ### TESTED ON OS 
 - UBUNTU 20.04 22 24.04 24.10
 - DEBIAN 10 11 12
-
-## PREVIEW
-![IMAGE](https://raw.githubusercontent.com/diah082/vip/main/IMG_20241019_225341_019.webp)
-
 
 ### FITUR TAMBAHAN
 - Lakukan Uji Coba dengan memilih Trial Pada Licensi Key
